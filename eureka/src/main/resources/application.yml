@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: eureka-server
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    # Disable these fields because we are setting up eureka server
+    register-with-eureka: false
+    fetch-registry: false

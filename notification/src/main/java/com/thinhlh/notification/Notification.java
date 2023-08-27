@@ -1,4 +1,4 @@
-package com.thinhlh.customer;
+package com.thinhlh.notification;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,22 +7,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Builder
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Entity
-public class Customer {
+public class Notification {
+
     @Id
     @SequenceGenerator(
-            name = "customer_id_sequence",
-            sequenceName = "customer_id_sequence"
+            name = "notification_id_sequence",
+            sequenceName = "notification_id_sequence"
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator ="customer_id_sequence"
+            generator = "notification_id_sequence"
     )
     private Integer id;
-    private String firstName;
-    private String lastname;
-    private String email;
+
+    private String message;
+    private String receiver;
 }

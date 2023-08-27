@@ -1,18 +1,41 @@
 version: "3.0"
 
 services:
-  postgres:
+  postgres_customer:
     image: postgres
-    container_name: spring_microservices_postgres
+    container_name: spring_microservices_postgres_customer
     environment:
       POSTGRES_USER: jamie
       POSTGRES_PASSWORD: jamie
       POSTGRES_DB: customer
-      PGDATA: /data/postgres
-    volumes:
-      - ./docker/postgres:/data/postgres
     ports:
       - 5432:5432
+    networks:
+      - db
+    restart: unless-stopped
+
+  postgres_fraud:
+    image: postgres
+    container_name: spring_microservices_postgres_fraud
+    environment:
+      POSTGRES_USER: jamie
+      POSTGRES_PASSWORD: jamie
+      POSTGRES_DB: fraud
+    ports:
+      - 5433:5432
+    networks:
+      - db
+    restart: unless-stopped
+
+  postgres_notification:
+    image: postgres
+    container_name: spring_microservices_postgres_notification
+    environment:
+      POSTGRES_USER: jamie
+      POSTGRES_PASSWORD: jamie
+      POSTGRES_DB: notification
+    ports:
+      - 5434:5432
     networks:
       - db
     restart: unless-stopped
@@ -20,6 +43,3 @@ services:
 networks:
   db:
     driver: bridge
-
-volumes:
-  postgres:
