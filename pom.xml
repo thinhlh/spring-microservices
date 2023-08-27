@@ -20,11 +20,11 @@
         <module>notification</module>
     </modules>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-        <maven.compiler.release>11</maven.compiler.release>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.release>17</maven.compiler.release>
 
         <spring.boot.plugins.maven.version>2.7</spring.boot.plugins.maven.version>
         <spring.boot.dependencies.dependencies.version>3.0.9</spring.boot.dependencies.dependencies.version>
